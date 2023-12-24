@@ -4,11 +4,13 @@ function prom(val) {
     val > 0 ? res("resolved") : rej("rejected");
   });
 }
+console.log("Before m1");
+
 prom(0)
   .then((i) => console.log(i))
   .catch((e) => console.log(e));
 
-console.log("hello");
+console.log("after m1");
 
 // O/p - Hello
 //      rejected
@@ -23,11 +25,11 @@ function method2(val) {
   return z;
 }
 
-console.log("method2");
+console.log("before method2");
 method2(10)
   .then((e) => console.log(e))
   .catch((e) => console.log(e));
-console.log("method2");
+console.log("after method2");
 
 // Method 3 - very imp (async -await)
 // Rather than consumers i.e(then & catch), we make use of async await to invoke a promise
